@@ -6,7 +6,7 @@
 /*   By: fgabler <fgabler@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 10:47:10 by fgabler           #+#    #+#             */
-/*   Updated: 2023/05/10 18:08:02 by fgabler          ###   ########.fr       */
+/*   Updated: 2023/05/11 18:02:18 by fgabler          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,18 +46,19 @@ static int	is_it_percent(va_list ap,
 			const char *_restrict_, int *ret_len, int *i)
 {
 	*i += 1;
-	// if (_restrict_[*i + 1] == 'p')
-	// else if (_restrict_[i + 1] == 'd')
-	// else if (_restrict_[i + 1] == 'i')
-	// else if (_restrict_[i + 1] == 'u')
-	// else if (_restrict_[i + 1] == 'X')
-	// else if (_restrict_[i + 1] == '%')
+	// if (_restrict_[*i] == 'd')
+	// if (_restrict_[*i] == 'i')
+	// if (_restrict_[*i] == 'u')
+	// if (_restrict_[*i] == 'X')
+	// if (_restrict_[*i] == '%')
 	if (_restrict_[*i] == 'x')
-		ft_hex();
+		return (ft_hex((va_arg (ap, int)), 'x', ret_len), *i += 1);
 	if (_restrict_[*i] == 'c')
-		return (put_char_mod((va_arg (ap, int) + 48), ret_len), *i += 2);
+		return (put_char_mod((va_arg (ap, int) + 48), ret_len), *i += 1);
 	if (_restrict_[*i] == 's')
-		return (ft_printf_str(va_arg (ap, char*), ret_len), *i += 2);
+		return (ft_printf_str(va_arg (ap, char *), ret_len), *i += 1);
+	if (_restrict_[*i] == 'p')
+		ft_ptr()
 	return (0);
 }
 
