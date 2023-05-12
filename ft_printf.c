@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fgabler <fgabler@student.42.fr>            +#+  +:+       +#+        */
+/*   By: fritzgabler <fritzgabler@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 10:47:10 by fgabler           #+#    #+#             */
-/*   Updated: 2023/05/11 18:02:18 by fgabler          ###   ########.fr       */
+/*   Updated: 2023/05/12 10:32:29 by fritzgabler      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,19 +46,22 @@ static int	is_it_percent(va_list ap,
 			const char *_restrict_, int *ret_len, int *i)
 {
 	*i += 1;
-	// if (_restrict_[*i] == 'd')
 	// if (_restrict_[*i] == 'i')
 	// if (_restrict_[*i] == 'u')
-	// if (_restrict_[*i] == 'X')
-	// if (_restrict_[*i] == '%')
-	if (_restrict_[*i] == 'x')
-		return (ft_hex((va_arg (ap, int)), 'x', ret_len), *i += 1);
+	// if (_restrict_[*i] == 'd')
+	// 	return ()
 	if (_restrict_[*i] == 'c')
 		return (put_char_mod((va_arg (ap, int) + 48), ret_len), *i += 1);
 	if (_restrict_[*i] == 's')
-		return (ft_printf_str(va_arg (ap, char *), ret_len), *i += 1);
+		return (ft_print_str(va_arg (ap, char *), ret_len), *i += 1);
+	if (_restrict_[*i] == 'X')
+		return (ft_hex((va_arg (ap, int)), 'X', ret_len), *i += 1);
+	if (_restrict_[*i] == 'x')
+		return (ft_hex((va_arg (ap, int)), 'x', ret_len), *i += 1);
 	if (_restrict_[*i] == 'p')
-		ft_ptr()
+		return (ft_ptr(va_arg(ap, long unsigned int), ret_len), *i += 1);
+	if (_restrict_[*i] == '%')
+		return (put_char_mod('%', ret_len), *i += 1);
 	return (0);
 }
 

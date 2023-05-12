@@ -1,32 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   int_main.c                                         :+:      :+:    :+:   */
+/*   ft_print_str.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fritzgabler <fritzgabler@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/10 14:08:44 by fgabler           #+#    #+#             */
-/*   Updated: 2023/05/12 10:31:45 by fritzgabler      ###   ########.fr       */
+/*   Created: 2023/05/09 14:54:22 by fgabler           #+#    #+#             */
+/*   Updated: 2023/05/11 20:03:08 by fritzgabler      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int main(void)
+void	ft_print_str(const char *ret_from_arg, int *ret_len)
 {
-	int	hex;
-	int				ret_len;
-	char			c;
+	int	i;
 
-	hex = 43234553;
-	c = 'X';
-	ret_len = 0;
-
-	ret_len = ft_printf("Min:\t\t%%\n");
-	printf("ft ret_len:	%d\n", ret_len);
-
-	ret_len = printf("Org:\t\t%%\n");
-	printf("Or ret_len:	%d\n", ret_len);
-
-
+	i = 0;
+	while (ret_from_arg[i])
+		put_char_mod(ret_from_arg[i++], ret_len);
 }
