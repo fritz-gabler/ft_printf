@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fritzgabler <fritzgabler@student.42.fr>    +#+  +:+       +#+        */
+/*   By: fgabler <fgabler@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 10:47:10 by fgabler           #+#    #+#             */
-/*   Updated: 2023/05/12 10:32:29 by fritzgabler      ###   ########.fr       */
+/*   Updated: 2023/05/13 16:56:15 by fgabler          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,26 +46,23 @@ static int	is_it_percent(va_list ap,
 			const char *_restrict_, int *ret_len, int *i)
 {
 	*i += 1;
-	// if (_restrict_[*i] == 'i')
-	// if (_restrict_[*i] == 'u')
-	// if (_restrict_[*i] == 'd')
-	// 	return ()
+	if (_restrict_[*i] == 'u')
+		return (ft_print_uns((va_arg (ap, unsigned int)), ret_len), *i += 1);
+	if (_restrict_[*i] == 'i' || _restrict_[*i] == 'd')
+		return (ft_print_num((va_arg (ap, int)), ret_len), *i += 1);
 	if (_restrict_[*i] == 'c')
 		return (put_char_mod((va_arg (ap, int) + 48), ret_len), *i += 1);
 	if (_restrict_[*i] == 's')
 		return (ft_print_str(va_arg (ap, char *), ret_len), *i += 1);
 	if (_restrict_[*i] == 'X')
-		return (ft_hex((va_arg (ap, int)), 'X', ret_len), *i += 1);
+		return (ft_print_hex((va_arg (ap, int)), 'X', ret_len), *i += 1);
 	if (_restrict_[*i] == 'x')
-		return (ft_hex((va_arg (ap, int)), 'x', ret_len), *i += 1);
+		return (ft_print_hex((va_arg (ap, int)), 'x', ret_len), *i += 1);
 	if (_restrict_[*i] == 'p')
-		return (ft_ptr(va_arg(ap, long unsigned int), ret_len), *i += 1);
+		return (ft_print_ptr(va_arg(ap, long unsigned int), ret_len), *i += 1);
 	if (_restrict_[*i] == '%')
 		return (put_char_mod('%', ret_len), *i += 1);
 	return (0);
 }
 
-void	put_char_mod(char _restrict_, int *ret_len)
-{
-	*ret_len += write(1, &_restrict_, 1);
-}
+
