@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fritzgabler <fritzgabler@student.42.fr>    +#+  +:+       +#+        */
+/*   By: fgabler <fgabler@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 10:47:10 by fgabler           #+#    #+#             */
-/*   Updated: 2023/05/13 19:56:05 by fritzgabler      ###   ########.fr       */
+/*   Updated: 2023/05/14 11:37:42 by fgabler          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ static int	is_it_percent(va_list ap,
 
 int	ft_printf(const char *_restrict_, ...)
 {
-	int	ret_len;
+	int		ret_len;
 	va_list	ap;
 
 	ret_len = 0;
@@ -64,5 +64,3 @@ static int	is_it_percent(va_list ap,
 		return (put_char_mod('%', ret_len), *i += 1);
 	return (0);
 }
-
-

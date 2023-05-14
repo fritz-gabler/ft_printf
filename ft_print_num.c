@@ -6,7 +6,7 @@
 /*   By: fgabler <fgabler@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/13 12:22:49 by fgabler           #+#    #+#             */
-/*   Updated: 2023/05/13 16:34:59 by fgabler          ###   ########.fr       */
+/*   Updated: 2023/05/14 11:30:51 by fgabler          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,3 @@ static void	ft_checknum(int ret_from_arg, int *ret_len)
 		put_char_mod(((ret_from_arg % 10) + '0'), ret_len);
 	}
 }
-
-
-
