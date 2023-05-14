@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fgabler <fgabler@student.42.fr>            +#+  +:+       +#+        */
+/*   By: fritzgabler <fritzgabler@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 10:47:10 by fgabler           #+#    #+#             */
-/*   Updated: 2023/05/13 16:56:15 by fgabler          ###   ########.fr       */
+/*   Updated: 2023/05/13 19:56:05 by fritzgabler      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ static int	is_it_percent(va_list ap,
 	if (_restrict_[*i] == 'i' || _restrict_[*i] == 'd')
 		return (ft_print_num((va_arg (ap, int)), ret_len), *i += 1);
 	if (_restrict_[*i] == 'c')
-		return (put_char_mod((va_arg (ap, int) + 48), ret_len), *i += 1);
+		return (put_char_mod((va_arg (ap, int)), ret_len), *i += 1);
 	if (_restrict_[*i] == 's')
 		return (ft_print_str(va_arg (ap, char *), ret_len), *i += 1);
 	if (_restrict_[*i] == 'X')
