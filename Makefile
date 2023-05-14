@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: fritzgabler <fritzgabler@student.42.fr>    +#+  +:+       +#+         #
+#    By: fgabler <fgabler@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/12 08:39:49 by fritzgabler       #+#    #+#              #
-#    Updated: 2023/05/13 19:35:25 by fritzgabler      ###   ########.fr        #
+#    Updated: 2023/05/14 11:41:06 by fgabler          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
